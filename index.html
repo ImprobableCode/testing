@@ -21,10 +21,10 @@ function t123()
 
 function mailman()
 {
-
+var jsonString = JSON.stringify(tester);
 	            $.ajax({
                 type: 'POST',
-                data: tester,
+                data: {data : jsonString},
                 url: 'http://www.holytwit.com/gold/save2.php',
                
             });
