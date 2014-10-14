@@ -10,7 +10,7 @@
 
         <preference name="phonegap-version" value="3.5.0" />
 
-        <name>Post Testing2</name>
+        <name>Array Post Test</name>
 
         <description>
         An example for phonegap build docs. 
