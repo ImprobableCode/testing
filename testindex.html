@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;">
+        
+	<title>jQuery form post2</title>
+	
+	<script src="js/phonegap.js"></script>
+	<script src="js/jquery-2.1.1.min.js"></script>
+ 
+        
+    <script>
+var tester = new Array();
+
+function t123()
+{
+	tester.push(1);
+	document.getElementById("demo1").innerHTML = "Result : " + tester; 
+}
+
+function mailman()
+{
+
+	            $.ajax({
+                type: 'POST',
+                data: tester,
+                url: 'http://www.holytwit.com/gold/save2.php',
+               
+            });
+
+	document.getElementById("demo2").innerHTML = "mailman ran"; 
+
+}
+
+
+
+
+        function onBodyLoad() {	
+        	 alert('so far 1 ');
+			$(document).trigger('deviceready')
+
+          //  document.addEventListener("deviceready",onDeviceReady,false);
+        }
+    </script>
+        
+    <style>
+        label, b {
+            display: block;
+        }
+    </style>
+</head>
+<body onload="onBodyLoad()">
+
+<div id="landmark-1" data-landmark-id="1">
+	<form>
+		<label for="email">
+			<b>Email</b>
+			<input type="email" id="email" name="email">
+		</label>
+
+		<label for="comment">
+			<b>Comment</b>
+			<textarea id="comment" name="comment" cols="30" rows="10"></textarea>
+		</label>
+
+		
+		<input type="checkbox" name="vehicle" value="Bike">I have a bike<br>
+		<input type="checkbox" name="vehicle2" value="Unicorn">I have a fucking unicorn<br>
+
+		<input type="submit" value="Save">
+	</form>
+</div>
+
+<button onclick="t123()">Add Child  </button>
+<button onclick="mailman()">Send </button>
+
+<p id="demo1"> Tester </p>
+<p id="demo2"> Tester </p>
+</body>
+</html>
